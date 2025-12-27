@@ -1,0 +1,90 @@
+<UserControl x:Class="FitnessTracker.Views.Pages.AddExercisePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Style x:Key="FormLabelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="#666"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+        </Style>
+        <Style x:Key="FormInputStyle" TargetType="Control">
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0,0,0,15"/>
+        </Style>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Border Background="White" CornerRadius="8" Padding="30" MaxWidth="500" HorizontalAlignment="Left" Margin="0,0,0,20">
+            <StackPanel>
+                <!-- Preset Selection -->
+                <TextBlock Text="Select Preset" Style="{StaticResource FormLabelStyle}"/>
+                <ComboBox ItemsSource="{Binding Presets}"
+                          SelectedItem="{Binding SelectedPreset}"
+                          DisplayMemberPath="Name"
+                          Style="{StaticResource FormInputStyle}"/>
+
+                <!-- Exercise Type -->
+                <TextBlock Text="Exercise Type *" Style="{StaticResource FormLabelStyle}"/>
+                <ComboBox ItemsSource="{Binding ExerciseTypes}"
+                          SelectedItem="{Binding SelectedType}"
+                          Style="{StaticResource FormInputStyle}"/>
+
+                <!-- Date -->
+                <TextBlock Text="Date *" Style="{StaticResource FormLabelStyle}"/>
+                <DatePicker SelectedDate="{Binding SelectedDate}"
+                            Style="{StaticResource FormInputStyle}"/>
+
+                <!-- Duration -->
+                <TextBlock Text="Duration (minutes) *" Style="{StaticResource FormLabelStyle}"/>
+                <TextBox Text="{Binding DurationMinutes, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource FormInputStyle}"/>
+
+                <!-- Auto Calculate Checkbox -->
+                <CheckBox Content="Auto-calculate calories based on preset and your weight"
+                          IsChecked="{Binding UseAutoCalorieCalculation}"
+                          Margin="0,0,0,15"/>
+
+                <!-- Calories -->
+                <TextBlock Text="Calories Burned *" Style="{StaticResource FormLabelStyle}"/>
+                <TextBox Text="{Binding CaloriesBurned, UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="{Binding UseAutoCalorieCalculation, Converter={x:Null}}"
+                         Style="{StaticResource FormInputStyle}"/>
+
+                <!-- Notes -->
+                <TextBlock Text="Notes (optional)" Style="{StaticResource FormLabelStyle}"/>
+                <TextBox Text="{Binding Notes, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource FormInputStyle}"
+                         Height="80"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         VerticalContentAlignment="Top"/>
+
+                <!-- Buttons -->
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <Button Content="Save Exercise"
+                            Command="{Binding SaveCommand}"
+                            Background="#EE6C4D"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Padding="25,12"
+                            FontSize="14"
+                            Cursor="Hand"/>
+                    <Button Content="Cancel"
+                            Command="{Binding CancelCommand}"
+                            Background="#666"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Padding="25,12"
+                            FontSize="14"
+                            Cursor="Hand"
+                            Margin="10,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </ScrollViewer>
+</UserControl>

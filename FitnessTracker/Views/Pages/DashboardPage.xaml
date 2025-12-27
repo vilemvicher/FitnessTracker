@@ -1,0 +1,88 @@
+<UserControl x:Class="FitnessTracker.Views.Pages.DashboardPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Style x:Key="StatCardStyle" TargetType="Border">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="Margin" Value="0,0,15,15"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.1"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <!-- Weekly Progress Section -->
+            <TextBlock Text="Weekly Progress" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+
+            <WrapPanel>
+                <!-- Calories Burned Card -->
+                <Border Style="{StaticResource StatCardStyle}" Width="200">
+                    <StackPanel>
+                        <TextBlock Text="Calories Burned" FontSize="12" Foreground="#666"/>
+                        <TextBlock Text="{Binding WeeklyCaloriesBurned, StringFormat={}{0:N0}}"
+                                   FontSize="32" FontWeight="Bold" Foreground="#EE6C4D" Margin="0,5,0,10"/>
+                        <ProgressBar Value="{Binding BurnedGoalProgress}" Maximum="100" Height="6"
+                                     Foreground="#EE6C4D" Background="#E0E0E0"/>
+                        <TextBlock Text="{Binding BurnedGoalProgress, StringFormat={}{0:N0}% of goal}"
+                                   FontSize="11" Foreground="#888" Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Calories Consumed Card -->
+                <Border Style="{StaticResource StatCardStyle}" Width="200">
+                    <StackPanel>
+                        <TextBlock Text="Calories Consumed" FontSize="12" Foreground="#666"/>
+                        <TextBlock Text="{Binding WeeklyCaloriesConsumed, StringFormat={}{0:N0}}"
+                                   FontSize="32" FontWeight="Bold" Foreground="#3D5A80" Margin="0,5,0,10"/>
+                        <ProgressBar Value="{Binding ConsumedGoalProgress}" Maximum="100" Height="6"
+                                     Foreground="#3D5A80" Background="#E0E0E0"/>
+                        <TextBlock Text="{Binding ConsumedGoalProgress, StringFormat={}{0:N0}% of goal}"
+                                   FontSize="11" Foreground="#888" Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Exercise Count Card -->
+                <Border Style="{StaticResource StatCardStyle}" Width="200">
+                    <StackPanel>
+                        <TextBlock Text="Total Exercises" FontSize="12" Foreground="#666"/>
+                        <TextBlock Text="{Binding TotalExercises}"
+                                   FontSize="32" FontWeight="Bold" Foreground="#98C1D9" Margin="0,5,0,10"/>
+                        <ProgressBar Value="{Binding ExerciseGoalProgress}" Maximum="100" Height="6"
+                                     Foreground="#98C1D9" Background="#E0E0E0"/>
+                        <TextBlock Text="{Binding ExerciseGoalProgress, StringFormat={}{0:N0}% of weekly goal}"
+                                   FontSize="11" Foreground="#888" Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Most Frequent Exercise Card -->
+                <Border Style="{StaticResource StatCardStyle}" Width="200">
+                    <StackPanel>
+                        <TextBlock Text="Favorite Exercise" FontSize="12" Foreground="#666"/>
+                        <TextBlock Text="{Binding MostFrequentExercise}"
+                                   FontSize="24" FontWeight="Bold" Foreground="#293241" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+
+            <!-- Quick Tips -->
+            <TextBlock Text="Quick Tips" FontSize="18" FontWeight="SemiBold" Margin="0,20,0,15"/>
+            <Border Style="{StaticResource StatCardStyle}" Width="Auto" HorizontalAlignment="Left">
+                <StackPanel>
+                    <TextBlock Text="• Track your exercises regularly for accurate statistics" Foreground="#666"/>
+                    <TextBlock Text="• Log your meals to monitor calorie intake" Foreground="#666" Margin="0,5,0,0"/>
+                    <TextBlock Text="• Set realistic weekly goals in your profile" Foreground="#666" Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

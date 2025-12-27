@@ -1,0 +1,194 @@
+{
+  "exercisePresets": [
+    {
+      "type": "Running",
+      "name": "Running (moderate pace)",
+      "caloriesPerMinute": 10.0,
+      "description": "Jogging at 8-10 km/h"
+    },
+    {
+      "type": "Running",
+      "name": "Running (fast pace)",
+      "caloriesPerMinute": 14.0,
+      "description": "Running at 12+ km/h"
+    },
+    {
+      "type": "Swimming",
+      "name": "Swimming (freestyle)",
+      "caloriesPerMinute": 8.0,
+      "description": "Moderate intensity freestyle swimming"
+    },
+    {
+      "type": "Swimming",
+      "name": "Swimming (breaststroke)",
+      "caloriesPerMinute": 7.0,
+      "description": "Leisurely breaststroke"
+    },
+    {
+      "type": "Weightlifting",
+      "name": "Weight Training (general)",
+      "caloriesPerMinute": 5.0,
+      "description": "General weight training session"
+    },
+    {
+      "type": "Weightlifting",
+      "name": "Weight Training (vigorous)",
+      "caloriesPerMinute": 7.0,
+      "description": "High-intensity weight training"
+    },
+    {
+      "type": "Cycling",
+      "name": "Cycling (leisurely)",
+      "caloriesPerMinute": 6.0,
+      "description": "Leisurely cycling at 15 km/h"
+    },
+    {
+      "type": "Cycling",
+      "name": "Cycling (moderate)",
+      "caloriesPerMinute": 9.0,
+      "description": "Moderate cycling at 20-25 km/h"
+    },
+    {
+      "type": "Walking",
+      "name": "Walking (brisk)",
+      "caloriesPerMinute": 4.5,
+      "description": "Brisk walking at 5-6 km/h"
+    },
+    {
+      "type": "Yoga",
+      "name": "Yoga (Hatha)",
+      "caloriesPerMinute": 3.0,
+      "description": "Traditional Hatha yoga"
+    },
+    {
+      "type": "HIIT",
+      "name": "HIIT Workout",
+      "caloriesPerMinute": 12.0,
+      "description": "High-Intensity Interval Training"
+    },
+    {
+      "type": "Rowing",
+      "name": "Rowing Machine",
+      "caloriesPerMinute": 8.5,
+      "description": "Rowing machine at moderate intensity"
+    },
+    {
+      "type": "Elliptical",
+      "name": "Elliptical Trainer",
+      "caloriesPerMinute": 7.0,
+      "description": "Elliptical at moderate resistance"
+    }
+  ],
+  "mealPresets": [
+    {
+      "name": "Oatmeal with Berries",
+      "category": "Breakfast",
+      "nutrition": {
+        "calories": 350,
+        "proteinGrams": 12,
+        "carbohydratesGrams": 55,
+        "fatGrams": 8
+      },
+      "description": "Steel-cut oats with mixed berries and honey"
+    },
+    {
+      "name": "Greek Yogurt Parfait",
+      "category": "Breakfast",
+      "nutrition": {
+        "calories": 280,
+        "proteinGrams": 20,
+        "carbohydratesGrams": 35,
+        "fatGrams": 6
+      },
+      "description": "Greek yogurt with granola and fruit"
+    },
+    {
+      "name": "Scrambled Eggs",
+      "category": "Breakfast",
+      "nutrition": {
+        "calories": 200,
+        "proteinGrams": 14,
+        "carbohydratesGrams": 2,
+        "fatGrams": 15
+      },
+      "description": "2 large eggs scrambled"
+    },
+    {
+      "name": "Grilled Chicken Breast",
+      "category": "Lunch",
+      "nutrition": {
+        "calories": 280,
+        "proteinGrams": 53,
+        "carbohydratesGrams": 0,
+        "fatGrams": 6
+      },
+      "description": "200g boneless skinless chicken breast"
+    },
+    {
+      "name": "Caesar Salad",
+      "category": "Lunch",
+      "nutrition": {
+        "calories": 320,
+        "proteinGrams": 8,
+        "carbohydratesGrams": 12,
+        "fatGrams": 28
+      },
+      "description": "Romaine lettuce with Caesar dressing and croutons"
+    },
+    {
+      "name": "Salmon Fillet",
+      "category": "Dinner",
+      "nutrition": {
+        "calories": 350,
+        "proteinGrams": 40,
+        "carbohydratesGrams": 0,
+        "fatGrams": 20
+      },
+      "description": "150g grilled Atlantic salmon"
+    },
+    {
+      "name": "Brown Rice",
+      "category": "Dinner",
+      "nutrition": {
+        "calories": 220,
+        "proteinGrams": 5,
+        "carbohydratesGrams": 45,
+        "fatGrams": 2
+      },
+      "description": "1 cup cooked brown rice"
+    },
+    {
+      "name": "Protein Shake",
+      "category": "Snack",
+      "nutrition": {
+        "calories": 180,
+        "proteinGrams": 30,
+        "carbohydratesGrams": 8,
+        "fatGrams": 3
+      },
+      "description": "Whey protein shake with water"
+    },
+    {
+      "name": "Apple",
+      "category": "Snack",
+      "nutrition": {
+        "calories": 95,
+        "proteinGrams": 0.5,
+        "carbohydratesGrams": 25,
+        "fatGrams": 0.3
+      },
+      "description": "Medium-sized apple"
+    },
+    {
+      "name": "Almonds (handful)",
+      "category": "Snack",
+      "nutrition": {
+        "calories": 165,
+        "proteinGrams": 6,
+        "carbohydratesGrams": 6,
+        "fatGrams": 14
+      },
+      "description": "28g raw almonds"
+    }
+  ]
+}
